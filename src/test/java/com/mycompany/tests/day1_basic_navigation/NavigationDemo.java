@@ -24,6 +24,7 @@ public class NavigationDemo {
         driver.navigate().forward();
         driver.manage().window().fullscreen();
         Thread.sleep(1000);
+        driver.navigate().refresh();
 
 
     }
