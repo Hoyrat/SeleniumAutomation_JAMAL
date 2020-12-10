@@ -9,7 +9,7 @@ public class WebDriverFactory {
 
     //write a static method that takes a string parameter,
     //based on value of parameter
-    //the method must return chrom driver or firefox driver object
+    //the method must return chrome driver or firefox driver object
     //name: getDriver
 
     public static WebDriver getDriver(String browserType){
