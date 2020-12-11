@@ -1,4 +1,6 @@
-package com.mycompany.utilities;
+package com.mycompany.tests.Rahul;
+
+import com.mycompany.utilities.ExcelUtils;
 
 public class ExcelUtilsDemo{
     public static void main(String[] args) {

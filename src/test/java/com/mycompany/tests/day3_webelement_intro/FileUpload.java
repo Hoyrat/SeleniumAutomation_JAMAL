@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import org.testng.Assert;
 
+import java.sql.SQLOutput;
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -22,6 +23,7 @@ public class FileUpload {
     //burada TestNG @before @After methodlari kullandik
 
     WebDriver driver;
+    String projectPath = System.getProperty("user.dir");
 
     @BeforeMethod
             public void setUpMethod(){
@@ -45,8 +47,13 @@ public class FileUpload {
             public void test1(){
 
         driver.get("http://practice.cybertekschool.com/upload");
-        driver.findElement(By.name("file")).sendKeys("C:\\Users\\yspos\\OneDrive\\Desktop\\Readme.txt");
-
+        String relativePath="src\\test\\resources\\Readme.txt";
+        System.out.println(projectPath);
+        System.out.println(relativePath);
+        String filePath=projectPath+"\\"+relativePath;
+        System.out.println(filePath);
+        System.out.println(System.getProperty("os.name"));
+        driver.findElement(By.name("file")).sendKeys(filePath);
         driver.findElement(By.id("file-submit")).click();
 
         String actualFilename=driver.findElement(By.id("uploaded-files")).getText();

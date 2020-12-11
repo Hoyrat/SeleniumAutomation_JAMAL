@@ -9,7 +9,7 @@ public class ExcelUtils {
     static XSSFWorkbook workbook;
     static XSSFSheet sheet;
 
-    public  ExcelUtils(String excelPath,String sheetName){
+    public  ExcelUtils(String excelPath,String sheetName){//constructor olusturduk
         try {
             workbook = new XSSFWorkbook(excelPath);
             sheet = workbook.getSheet(sheetName);
@@ -48,8 +48,6 @@ public class ExcelUtils {
 
             Double cellData=sheet.getRow(rowNum).getCell(colNum).getNumericCellValue();
             System.out.println(cellData);
-
-
         }catch(Exception e){
             System.out.println(e.getMessage());
             System.out.println(e.getCause());
