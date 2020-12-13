@@ -7,11 +7,14 @@ public class ExcelUtilsDemo{
 
         String projectPath = System.getProperty("user.dir");
         System.out.println(projectPath);
-        ExcelUtils excel=new ExcelUtils(projectPath+"\\src\\test\\resources\\data.xlsx","credentials");
+
+        String excelPath="\\src\\test\\resources\\data.xlsx";
+        String sheetNAme="credentials";
+        ExcelUtils excel=new ExcelUtils(projectPath+excelPath,sheetNAme);
 
         excel.getRowCount();
         excel.getCellDataString(0,0);
-        excel.getCellDataNumber(1,1);
+        excel.getCellData(1,1);
     }
 }
 

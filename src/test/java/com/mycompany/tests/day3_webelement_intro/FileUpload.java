@@ -36,10 +36,7 @@ public class FileUpload {
 
     @AfterMethod
             public void tearDownMethod() throws InterruptedException {
-
-        Thread.sleep(10);
-
-        driver.quit();
+            driver.quit();
     }
 
     @Test
@@ -52,20 +49,20 @@ public class FileUpload {
         System.out.println(relativePath);
         String filePath=projectPath+"\\"+relativePath;
         System.out.println(filePath);
+
+        //get computer operating system
         System.out.println(System.getProperty("os.name"));
+        // upload the file
         driver.findElement(By.name("file")).sendKeys(filePath);
+        // clicking the upload button
         driver.findElement(By.id("file-submit")).click();
-
+        //getting text of webelement
         String actualFilename=driver.findElement(By.id("uploaded-files")).getText();
-
         System.out.println(actualFilename);
-
+        //verfy file name is displayed in the next page
         Assert.assertEquals(actualFilename,"Readme.txt", "verify the file name");
 
     }
-
-
-
-    }
+}
 
 
