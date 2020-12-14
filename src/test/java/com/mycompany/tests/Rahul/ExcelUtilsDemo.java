@@ -13,8 +13,18 @@ public class ExcelUtilsDemo{
         ExcelUtils excel=new ExcelUtils(projectPath+excelPath,sheetNAme);
 
         excel.getRowCount();
-        excel.getCellDataString(0,0);
+        //excel.getCellDataString(0,0);
+        excel.getCellData(0,0);
+        excel.getCellData(0,1);
+        excel.getCellData(1,0);
         excel.getCellData(1,1);
+        excel.getCellData(2,0);
+        excel.getCellData(2,1);
+        excel.getCellData(3,0);
+        excel.getCellData(3,1);
+
+
+
     }
 }
 
